@@ -26,7 +26,7 @@ public class ImageService {
 
         Blog savedBlog = blogRepository2.save(blog);
 
-        Image savedImage = savedBlog.getImagelList().get(savedBlog.getImagelList().size()-1);
+        Image savedImage = savedBlog.getImageList().get(savedBlog.getImageList().size()-1);
         return savedImage;   
 
     }
