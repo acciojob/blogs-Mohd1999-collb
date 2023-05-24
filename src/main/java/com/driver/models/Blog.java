@@ -24,7 +24,7 @@ public class Blog{
 
     @Column(name = "date")
     @CreationTimestamp
-    private Date date;
+    private Date pubDate;
 
     public Blog(String title, String content) {
         this.title = title;
@@ -55,13 +55,13 @@ public class Blog{
         this.content = content;
     }
 
-    public Date getDate() {
-        return date;
-    }
+   public void setPubDate(Date pubDate) {
+       this.pubDate = pubDate;
+   }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+   public Date getPubDate() {
+       return pubDate;
+   }
 
     @ManyToOne
     @JoinColumn
