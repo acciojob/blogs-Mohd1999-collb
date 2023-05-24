@@ -76,13 +76,13 @@ public class Blog{
     }
 
     @OneToMany(mappedBy="blog", cascade = CascadeType.ALL)
-    List<Image> imagelList = new ArrayList<>();
+    List<Image> imageList = new ArrayList<>();
 
-    public void setImagelList(List<Image> imagelList) {
-        this.imagelList = imagelList;
-    }
+   public void setImageList(List<Image> imageList) {
+       this.imageList = imageList;
+   }
 
-    public List<Image> getImagelList() {
-        return imagelList;
-    }
+   public List<Image> getImageList() {
+       return imageList;
+   }
 }
