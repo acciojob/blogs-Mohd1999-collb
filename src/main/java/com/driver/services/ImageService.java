@@ -24,11 +24,11 @@ public class ImageService {
         Image image = new Image(description, dimensions);
         image.setBlog(blog);
 
+        List<Image> imageList = blog.getImageList();
+
+        imageList.add(image); // Update the image list
         Blog savedBlog = blogRepository2.save(blog);
-
-        Image savedImage = savedBlog.getImageList().get(savedBlog.getImageList().size()-1);
-        return savedImage;   
-
+        return image;
     }
 
     public void deleteImage(Integer id){

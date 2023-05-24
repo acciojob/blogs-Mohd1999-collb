@@ -26,9 +26,15 @@ public class Blog{
     @CreationTimestamp
     private Date pubDate;
 
-    public Blog(String title, String content) {
+    // public Blog(String title, String content) {
+    //     this.title = title;
+    //     this.content = content;
+    // }
+
+    public Blog(String title, String content, Date pubDate) {
         this.title = title;
         this.content = content;
+        this.pubDate = pubDate;
     }
 
     public int getId() {

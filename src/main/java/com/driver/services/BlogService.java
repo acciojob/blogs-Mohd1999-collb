@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.Date;
 
 @Service
 public class BlogService {
@@ -25,37 +26,18 @@ public class BlogService {
     public Blog createAndReturnBlog(Integer userId, String title, String content) {
         //create a blog at the current time
 
-        // Optional<User> userOpt = userRepository1.findById(userId);
-        // User user = userOpt.get();
+        Optional<User> userOpt = userRepository1.findById(userId);
+        User user = userOpt.get();
 
-        // Blog blog = new Blog(title, content);
-        // blog.setUser(user);
-
-        // List<Blog> bloglList = user.getBlogList();
-
-        // bloglList.add(blog);
-        // user.setBlogList(bloglList);
-
-        // User savedUser = userRepository1.save(user);
-
-        // Blog savedBlog = savedUser.getBlogList().get(savedUser.getBlogList().size()-1);
-        // return savedBlog;
-
-        Optional<User> optionalUser = userRepository1.findById(userId);
-        User user = optionalUser.get();
-
-        Blog blog = new Blog(title, content);
+        Blog blog = new Blog(title, content, new Date());
         blog.setUser(user);
 
-        List<Blog> blogList= user.getBlogList();
-        blogList.add(blog);
-        user.setBlogList(blogList);
+        List<Blog> bloglList = user.getBlogList();
+
+        bloglList.add(blog); // updete the blog list
 
         User savedUser = userRepository1.save(user);
-
-        Blog savedBlog = savedUser.getBlogList().get(savedUser.getBlogList().size() -1);
-
-        return savedBlog;
+        return blog;
     }
 
     public void deleteBlog(int blogId){
