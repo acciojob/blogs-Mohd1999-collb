@@ -37,7 +37,6 @@ public class ImageService {
         imageRepository2.deleteById(id);
     }
 
-
     public int countImagesInScreen(Integer imageId, String screenDimensions) {
         //Find the number of images of given dimensions that can fit in a screen having `screenDimensions`
 
@@ -63,9 +62,7 @@ public class ImageService {
         int heightRatio = heightScreen/heightImage;
         int widthRatio = widthScreen/widthImage;
 
-
         int count = heightRatio * widthRatio;
-
         return count;
     }
 }
