@@ -68,7 +68,7 @@ public class ImageService {
 
         // return count;
 
-        Optional<Image> imageOpt = imageRepository2.findById(id);
+        Optional<Image> imageOpt = imageRepository2.findById(imageId);
         Image image = imageOpt.get();
         
         /*Image dimension --> 2*2 and screen dimension --> 4*4 */
